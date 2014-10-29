@@ -31,8 +31,8 @@ public class View extends JFrame implements KeyListener {
 
 	private JLabel gagne;
 
-	public View() {
-
+	public View(Controler controler) {
+		this.controler = controler;
 		// Définit un titre pour notre fenêtre
 		setTitle("MARIO-SOKOBAN");
 		// Définit sa taille : 400 pixels de large et 100 pixels de haut
@@ -44,8 +44,8 @@ public class View extends JFrame implements KeyListener {
 
 		try {
 			setContentPane();
+			viewCarte.setControler(controler);
 		} catch (final IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

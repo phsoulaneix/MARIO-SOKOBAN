@@ -8,9 +8,9 @@ public class ControlerImpl implements Controler {
 	private final CarteImpl carte;
 	private final View view;
 
-	public ControlerImpl(View view, CarteImpl carte) {
-		this.view = view;
-		this.carte = carte;
+	public ControlerImpl() {
+		this.view = new View(this);
+		this.carte = new CarteImpl();
 		initialiseCarte();
 		view.afficheCarte(carte.getTableauImage());
 		view.afficherGagnee();
