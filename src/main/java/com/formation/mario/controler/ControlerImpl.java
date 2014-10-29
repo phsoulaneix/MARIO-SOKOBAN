@@ -1,7 +1,6 @@
 package com.formation.mario.controler;
 
 import com.formation.mario.model.CarteImpl;
-import com.formation.mario.model.Deplacement;
 import com.formation.mario.view.View;
 
 public class ControlerImpl implements Controler {
@@ -44,6 +43,16 @@ public class ControlerImpl implements Controler {
 	public void victoire() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public int getLargeurTableau() {
+		return 10;
+	}
+
+	@Override
+	public int gethauteurTableau() {
+		return 10;
 	}
 
 }

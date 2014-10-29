@@ -1,6 +1,5 @@
 package com.formation.mario.controler;
 
-import com.formation.mario.model.Deplacement;
 
 public interface Controler {
 
@@ -25,4 +24,16 @@ public interface Controler {
 	 * permet de demander à la view l'affichage de message de fin.
 	 */
 	public void victoire();
+
+	/**
+	 * 
+	 * @return le nombre de case du tableau en largeur
+	 */
+	public int getLargeurTableau();
+
+	/**
+	 * 
+	 * @return le nombre de case du tableau en hauteur
+	 */
+	public int gethauteurTableau();
 }

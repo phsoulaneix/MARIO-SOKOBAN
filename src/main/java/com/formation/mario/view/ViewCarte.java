@@ -8,7 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import com.formation.mario.model.CarteImpl;
+import com.formation.mario.controler.Controler;
 
 public class ViewCarte extends JPanel {
 
@@ -17,13 +17,14 @@ public class ViewCarte extends JPanel {
 	 */
 	private static final long serialVersionUID = 6189323613812774918L;
 	private String[][] cases;
+	private Controler controler;
 
 	@Override
 	public void paintComponent(Graphics g) {
 		try {
 			if (cases != null) {
-				for (int i = 0; i < CarteImpl.TAILLE_TABLEAU; i++) {
-					for (int j = 0; j < CarteImpl.TAILLE_TABLEAU; j++) {
+				for (int i = 0; i < controler.getLargeurTableau(); i++) {
+					for (int j = 0; j < controler.gethauteurTableau(); j++) {
 						final String elt = cases[i][j];
 						if (elt != null && !elt.isEmpty()) {
 							final File file = new File("images/" + elt);
@@ -47,6 +48,11 @@ public class ViewCarte extends JPanel {
 	 */
 	public void modifieTableau(String[][] cases) {
 		this.cases = cases;
+
+	}
+
+	public void setControler(Controler controler) {
+		this.controler = controler;
 
 	}
 

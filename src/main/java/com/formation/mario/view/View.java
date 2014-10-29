@@ -16,7 +16,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import com.formation.mario.controler.Controler;
-import com.formation.mario.model.Deplacement;
+import com.formation.mario.controler.Deplacement;
 
 public class View extends JFrame implements KeyListener {
 
@@ -164,6 +164,7 @@ public class View extends JFrame implements KeyListener {
 
 	public void setControler(Controler controler) {
 		this.controler = controler;
+		this.viewCarte.setControler(controler);
 	}
 
 }
