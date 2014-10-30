@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -31,7 +32,7 @@ public class View extends JFrame implements KeyListener {
 
 	private JLabel gagne;
 
-	public View(Controler controler) {
+	public View(Controler controler, List<Integer> listeLevel) {
 		this.controler = controler;
 		// Définit un titre pour notre fenêtre
 		setTitle("MARIO-SOKOBAN");

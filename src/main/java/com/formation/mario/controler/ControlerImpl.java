@@ -9,7 +9,7 @@ public class ControlerImpl implements Controler {
 	private final View view;
 
 	public ControlerImpl() {
-		this.view = new View(this);
+		this.view = new View(this, null);
 		this.carte = new CarteImpl();
 		initialiseCarte();
 		view.afficheCarte(carte.getTableauImage());
