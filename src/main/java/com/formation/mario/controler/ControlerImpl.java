@@ -51,7 +51,7 @@ public class ControlerImpl implements Controler {
 	}
 
 	@Override
-	public int gethauteurTableau() {
+	public int getHauteurTableau() {
 		return 10;
 	}
 

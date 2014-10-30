@@ -13,4 +13,10 @@ public interface Carte {
 	 */
 	public void chargerLevel(int level);
 
+	/**
+	 * 
+	 * @return true si la partie est gagnée
+	 */
+	public Boolean testVictoire();
+
 }

@@ -38,7 +38,7 @@ public class View extends JFrame implements KeyListener {
 		setTitle("MARIO-SOKOBAN");
 		// Définit sa taille
 		setSize(34 * controler.getLargeurTableau(),
-				34 * controler.gethauteurTableau() + 40);
+				34 * controler.getHauteurTableau() + 40);
 		// Nous demandons maintenant à notre objet de se positionner au centre
 		setLocationRelativeTo(null);
 		// Termine le processus lorsqu'on clique sur la croix rouge
@@ -122,7 +122,7 @@ public class View extends JFrame implements KeyListener {
 	 */
 	public void afficheCarte(String[][] cases) {
 		setSize(34 * controler.getLargeurTableau(),
-				34 * controler.gethauteurTableau() + 40);
+				34 * controler.getHauteurTableau() + 40);
 		viewCarte.modifieTableau(cases);
 		viewCarte.repaint();
 

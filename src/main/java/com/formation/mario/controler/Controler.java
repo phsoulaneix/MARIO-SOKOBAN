@@ -1,6 +1,5 @@
 package com.formation.mario.controler;
 
-
 public interface Controler {
 
 	/**
@@ -35,5 +34,5 @@ public interface Controler {
 	 * 
 	 * @return le nombre de case du tableau en hauteur
 	 */
-	public int gethauteurTableau();
+	public int getHauteurTableau();
 }

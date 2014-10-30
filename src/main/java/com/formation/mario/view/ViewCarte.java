@@ -24,7 +24,7 @@ public class ViewCarte extends JPanel {
 		try {
 			if (cases != null) {
 				for (int i = 0; i < controler.getLargeurTableau(); i++) {
-					for (int j = 0; j < controler.gethauteurTableau(); j++) {
+					for (int j = 0; j < controler.getHauteurTableau(); j++) {
 						final String elt = cases[i][j];
 						if (elt != null && !elt.isEmpty()) {
 							final File file = new File("images/" + elt);
