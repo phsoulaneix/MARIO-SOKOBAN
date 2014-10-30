@@ -1,11 +1,12 @@
 package com.formation.mario.controler;
 
+import com.formation.mario.model.Carte;
 import com.formation.mario.model.CarteImpl;
 import com.formation.mario.view.View;
 
 public class ControlerImpl implements Controler {
 
-	private final CarteImpl carte;
+	private final Carte carte;
 	private final View view;
 
 	public ControlerImpl() {
