@@ -23,19 +23,22 @@ public class ViewCarte extends JPanel {
 	public void paintComponent(Graphics g) {
 		try {
 			if (cases != null) {
-				for (int i = 0; i < controler.getLargeurTableau(); i++) {
-					for (int j = 0; j < controler.getHauteurTableau(); j++) {
+				for (int i = 0; i < controler.getHauteurTableau(); i++) {
+					for (int j = 0; j < controler.getLargeurTableau(); j++) {
 						final String elt = cases[i][j];
 						if (elt != null && !elt.isEmpty()) {
 							final File file = new File("images/" + elt);
 							if (file.exists()) {
 								final Image img = ImageIO.read(file);
-								g.drawImage(img, 34 * i, 34 * j + 20, this);
+								g.drawImage(img, 34 * j, 34 * i + 20, this);
 							}
 						}
+						System.out.print(j);
 					}
+					System.out.println();
 				}
 			}
+			System.out.println();
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}
