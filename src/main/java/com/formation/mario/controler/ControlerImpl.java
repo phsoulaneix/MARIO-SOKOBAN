@@ -1,5 +1,7 @@
 package com.formation.mario.controler;
 
+import java.util.List;
+
 import com.formation.mario.model.Carte;
 import com.formation.mario.model.CarteImpl;
 import com.formation.mario.view.View;
@@ -10,11 +12,10 @@ public class ControlerImpl implements Controler {
 	private final View view;
 
 	public ControlerImpl() {
-		this.view = new View(this, null);
 		this.carte = new CarteImpl();
+		this.view = new View(this, null);
 		initialiseCarte();
 		view.afficheCarte(carte.getTableauImage());
-		view.afficherGagnee();
 	}
 
 	@Deprecated
@@ -24,25 +25,26 @@ public class ControlerImpl implements Controler {
 
 	@Override
 	public void deplacementJoueur(Deplacement deplacement) {
-		// TODO Auto-generated method stub
-
+		carte.deplacement(deplacement);
+		view.afficheCarte(carte.getTableauImage());
+		if (carte.testVictoire()) {
+			view.afficherGagnee();
+		}
 	}
 
 	@Override
 	public void resetLevel() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Remise à zéro du niveau");
+		view.masquerGagnee();
+		carte.chargerLevel(1);
+		view.afficheCarte(carte.getTableauImage());
 	}
 
 	@Override
-	public void changeLevel(int i) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void victoire() {
-		// TODO Auto-generated method stub
+	public void changeLevel(int level) {
+		System.out.println("Changement de niveau : " + level);
+		carte.chargerLevel(level);
+		view.afficheCarte(carte.getTableauImage());
 
 	}
 
@@ -54,6 +56,16 @@ public class ControlerImpl implements Controler {
 	@Override
 	public int getHauteurTableau() {
 		return 10;
+	}
+
+	@Override
+	public List<Integer> getListeNiveau() {
+		return carte.getListeNiveau();
+	}
+
+	@Override
+	public String getInformation() {
+		return "Niveau " + carte.getNiveau();
 	}
 
 }

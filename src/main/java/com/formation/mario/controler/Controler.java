@@ -1,5 +1,7 @@
 package com.formation.mario.controler;
 
+import java.util.List;
+
 public interface Controler {
 
 	/**
@@ -20,11 +22,6 @@ public interface Controler {
 	public void changeLevel(int level);
 
 	/**
-	 * permet de demander à la view l'affichage de message de fin.
-	 */
-	public void victoire();
-
-	/**
 	 * 
 	 * @return le nombre de case du tableau en largeur
 	 */
@@ -35,4 +32,18 @@ public interface Controler {
 	 * @return le nombre de case du tableau en hauteur
 	 */
 	public int getHauteurTableau();
+
+	/**
+	 * renvoi la liste des niveaux
+	 * 
+	 * @return
+	 */
+	public List<Integer> getListeNiveau();
+
+	/**
+	 * Affiche les information en bas de page
+	 * 
+	 * @return
+	 */
+	public String getInformation();
 }

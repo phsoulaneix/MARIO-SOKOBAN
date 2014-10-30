@@ -32,6 +32,8 @@ public class View extends JFrame implements KeyListener {
 
 	private JLabel gagne;
 
+	private JLabel information;
+
 	public View(Controler controler, List<Integer> listeLevel) {
 		this.controler = controler;
 		// Définit un titre pour notre fenêtre
@@ -77,20 +79,34 @@ public class View extends JFrame implements KeyListener {
 			}
 		});
 		menu1.add(item1);
-		final JMenuItem item2 = new JMenuItem("Fermer");
-		item2.addActionListener(new ActionListener() {
+
+		final JMenu item2 = new JMenu("Niveau");
+
+		final NiveauListener nl = new NiveauListener();
+		for (final Integer i : controler.getListeNiveau()) {
+			final JMenuItem niveau = new JMenuItemNiveau("Niveau " + i, i);
+			item2.add(niveau);
+			niveau.addActionListener(nl);
+		}
+		menu1.add(item2);
+
+		final JMenuItem item3 = new JMenuItem("Fermer");
+		item3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
-		menu1.add(item2);
+		menu1.add(item3);
 		menuBar.add(menu1);
 		viewCarte.add(menuBar, BorderLayout.NORTH);
 
 		gagne = new JLabel("Gagnée", JLabel.CENTER);
 		final Font f = new Font("Serif", Font.PLAIN, 36);
 		gagne.setFont(f);
+
+		information = new JLabel(controler.getInformation());
+		viewCarte.add(information, BorderLayout.SOUTH);
 
 		this.addKeyListener(this);
 		// On prévient notre JFrame que notre JPanel sera son content pane
@@ -124,6 +140,7 @@ public class View extends JFrame implements KeyListener {
 		setSize(34 * controler.getLargeurTableau(),
 				34 * controler.getHauteurTableau() + 40);
 		viewCarte.modifieTableau(cases);
+		information.setText(controler.getInformation());
 		viewCarte.repaint();
 
 	}
@@ -169,6 +186,14 @@ public class View extends JFrame implements KeyListener {
 	public void setControler(Controler controler) {
 		this.controler = controler;
 		this.viewCarte.setControler(controler);
+	}
+
+	public class NiveauListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			final int level = ((JMenuItemNiveau) e.getSource()).getValue();
+			controler.changeLevel(level);
+		}
 	}
 
 }
