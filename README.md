@@ -40,3 +40,17 @@ Le déplacement du personnage suit les régles suivantes :
 Indication
 --------------------
 * Utiliser de l'heritage pour représenter les différents type de case.
+
+Sauvegarde
+--------------------
+Pour le chargement des fichiers, on utilisera la correspondance suivante :
+
+* 0 RIEN
+* 1 MUR
+* 2 CAISSE
+* 3 CAISSE_OK
+* 4 OBJECTIF
+* 5 MARIO_HAUT
+* 6 MARIO_BAS
+* 7 MARIO_GAUCHE
+* 8 MARIO_DROITE
