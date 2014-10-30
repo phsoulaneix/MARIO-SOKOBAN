@@ -36,7 +36,7 @@ Le déplacement du personnage suit les régles suivantes :
 * On ne peut pas le faire monter s'il y a deux caisses au-dessus de lui.
 * Par contre, on peut le faire monter s'il y a juste une caisse au-dessus de lui.
 * Mais attention, on ne peut pas le faire monter s'il y a une caisse au-dessus de lui et que la caisse se trouve au bord de la carte !
-* 
+
 Indication
 --------------------
 * Utiliser de l'heritage pour représenter les différents type de case.
