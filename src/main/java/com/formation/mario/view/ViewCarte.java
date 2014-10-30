@@ -33,12 +33,9 @@ public class ViewCarte extends JPanel {
 								g.drawImage(img, 34 * j, 34 * i + 20, this);
 							}
 						}
-						System.out.print(j);
 					}
-					System.out.println();
 				}
 			}
-			System.out.println();
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}
