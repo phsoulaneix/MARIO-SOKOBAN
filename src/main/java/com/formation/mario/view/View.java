@@ -119,6 +119,7 @@ public class View extends JFrame implements KeyListener {
 	 */
 	public void afficherGagnee() {
 		viewCarte.add(gagne, BorderLayout.CENTER);
+		setVisible(true);
 	}
 
 	/**
