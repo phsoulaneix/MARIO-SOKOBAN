@@ -35,7 +35,7 @@ public class ControlerImpl implements Controler {
 	@Override
 	public void resetLevel() {
 		System.out.println("Remise à zéro du niveau");
-		view.masquerGagnee();
+
 		carte.chargerLevel(1);
 		view.afficheCarte(carte.getTableauImage());
 	}
@@ -44,6 +44,7 @@ public class ControlerImpl implements Controler {
 	public void changeLevel(int level) {
 		System.out.println("Changement de niveau : " + level);
 		carte.chargerLevel(level);
+		view.masquerGagnee();
 		view.afficheCarte(carte.getTableauImage());
 
 	}

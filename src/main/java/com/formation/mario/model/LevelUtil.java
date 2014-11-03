@@ -22,7 +22,7 @@ public class LevelUtil {
 			tableau = new Integer[tailleTableauHauteur][tailleTableauLargeur];
 			while ((ligne = br.readLine()) != null) {
 				for (int i = 0; i < tailleTableauLargeur; i++) {
-					tableau[i][j] = Integer.parseInt(ligne.substring(i, i + 1));
+					tableau[j][i] = Integer.parseInt(ligne.substring(i, i + 1));
 				}
 				j++;
 			}
